@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="customProgressDialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">@android:color/transparent</item> <!-- 设置自定义布局的背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>  <!-- 设置弹框背景透明-->
+        <item name="android:windowNoTitle">true</item> <!-- 去除title-->
+    </style>
+
+
+    <style name="customDialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">@android:color/transparent</item> <!-- 设置自定义布局的背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>  <!-- 设置弹框背景透明-->
+        <item name="android:windowNoTitle">true</item> <!-- 去除title-->
+    </style>
+
+</resources>
+
+
+

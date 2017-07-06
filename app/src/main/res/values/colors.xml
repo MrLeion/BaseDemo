@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--白色-->
+    <color name="white">#FFFFFF</color>
+
+    <!--线条颜色-->
+    <color name="line_color">#509C9C9C</color>
+
+    <color name="line_color00">#9C9C9C</color>
+
+    <color name="line_colorn">#9C9C9C</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_holo_light">#ffd0d0d0</color>
+    <color name="black_deep">#FF000000</color>
+    <color name="bbbbbb">#bbbbbb</color>
+</resources>

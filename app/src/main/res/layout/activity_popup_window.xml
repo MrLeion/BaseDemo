@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <TextView
+        android:id="@+id/tv_full_screen"
+        android:layout_marginTop="@dimen/dp_50"
+        android:padding="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全屏弹出"
+        android:background="@color/line_color"
+        android:layout_marginLeft="@dimen/dp_50"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_dialog"
+        android:layout_marginTop="@dimen/dp_50"
+        android:padding="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="弹出弹框"
+        android:background="@color/line_color"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_50"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_pop"
+        android:padding="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="向下弹出"
+        android:background="@color/line_color"
+        android:layout_marginTop="@dimen/dp_150"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_left"
+        android:padding="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="向右弹出"
+        android:layout_below="@id/tv_pop"
+        android:layout_toLeftOf="@id/tv_pop"
+        android:layout_marginRight="@dimen/dp_50"
+        android:background="@color/line_color"
+        android:layout_marginTop="@dimen/dp_75"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_right"
+        android:padding="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="向左弹出"
+        android:layout_below="@id/tv_pop"
+        android:layout_toRightOf="@id/tv_pop"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:background="@color/line_color"
+        android:layout_marginTop="@dimen/dp_75"
+        />
+
+    <TextView
+        android:id="@+id/tv_pop_bottom"
+        android:layout_below="@id/tv_pop"
+        android:layout_marginTop="@dimen/dp_200"
+        android:padding="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="向上弹出"
+        android:background="@color/line_color"
+        android:layout_centerHorizontal="true"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>
