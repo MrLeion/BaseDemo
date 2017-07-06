@@ -6,12 +6,14 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 
-import com.google.common.base.Strings;
 
 import java.util.List;
 
 public class UIManager {
+
+
     public static void turnToAct(Context ct, Class<?> z) {
         Intent it = new Intent(ct, z);
         if (!isFastDoubleClick()) {
@@ -52,12 +54,11 @@ public class UIManager {
 
     /**
      * 判断某个界面是否在前台
-     *
      * @param context
      * @param className 某个界面名称
      */
     public static boolean isForeground(Context context, String className) {
-        if (context == null || Strings.isNullOrEmpty(className)) {
+        if (context == null || TextUtils.isEmpty(className)) {
             return false;
         }
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
@@ -73,7 +74,6 @@ public class UIManager {
 
     /**
      * 判断应用是否已经启动
-     *
      * @param context     一个context
      * @return boolean
      */
