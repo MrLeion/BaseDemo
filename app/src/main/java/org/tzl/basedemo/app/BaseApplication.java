@@ -28,10 +28,8 @@ public class BaseApplication extends Application {
         HttpManager.getInstance().init(this);
         //选择服务器
         HttpManager.getInstance().setConnectServer(0);
-
         DeviceInfo.MyVersion = getSystemVersionName(this);
         DeviceInfo.childSources = "";
-
 
         // 将“12345678”替换成您申请的APPID，申请地址：http://open.voicecloud.cn
         SpeechUtility.createUtility(this, SpeechConstant.APPID +"="+getString(R.string.app_id));
@@ -42,7 +40,6 @@ public class BaseApplication extends Application {
 
     /**
      * 获取版本号
-     *
      * @param context
      * @return
      */

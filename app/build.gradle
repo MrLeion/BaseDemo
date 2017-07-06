@@ -18,6 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:2.0.1'
+    }
 }
 
 dependencies {
@@ -25,6 +29,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    androidTestCompile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(':baselibrary')
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
@@ -32,15 +37,5 @@ dependencies {
     compile files('libs/Msc.jar')
     compile files('libs/Sunflower.jar')
 
-    /**
-     *自动化测试
-     */
-//    androidTestCompile 'com.android.support.test:runner:0.4'
-//    // Set this dependency to use JUnit 4 rules
-//    androidTestCompile 'com.android.support.test:rules:0.4'
-    // Set this dependency to build and run Espresso tests
-//    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
-    // Set this dependency to build and run UI Automator tests
-    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
-    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+//    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
 }

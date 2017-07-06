@@ -11,8 +11,7 @@ import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
+
 
 import org.tzl.basedemo.R;
 import org.tzl.basedemo.view.CommonPopupWindow;
@@ -31,11 +30,6 @@ public class PopupWindowActivity extends AppCompatActivity implements View.OnCli
 
     CommonPopupWindow popupWindow;
     private CustomProgressDialog dialog;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient      mClient;
     private CustomDialog mDialog;
 
     @Override
@@ -43,9 +37,6 @@ public class PopupWindowActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popup_window);
         initView();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        mClient = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void initView() {

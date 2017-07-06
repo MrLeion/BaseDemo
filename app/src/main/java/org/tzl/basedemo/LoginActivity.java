@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.tzl.basedemo.activity.Sound2WordActivity;
 import org.tzl.basedemo.app.constant.Api;
 import org.tzl.basedemo.request.LoginRequest;
 import org.tzl.baselibrary.base.BaseActivity;
@@ -148,7 +147,6 @@ public class LoginActivity extends BaseActivity {
                 etLoginUserPassWord.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 break;
             case R.id.tvLoginForgetPassword:
-
                 break;
             case R.id.tvLoginUserLogin:
                 login();
@@ -184,10 +182,9 @@ public class LoginActivity extends BaseActivity {
             @Override
             public <C> void onSuccess(int statusCode, C response) {
                 T.showShortToast("状态码"+statusCode);
-                Intent intent = new Intent(LoginActivity.this, Sound2WordActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-
             }
 
             @Override
@@ -195,9 +192,6 @@ public class LoginActivity extends BaseActivity {
                 T.showShortToast("登录失败");
             }
         });
-
-
-
     }
 
 
