@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<org.tzl.baselibrary.banner.Banner xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:id="@+id/banner"
+                                   app:delay_time="4000"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="240dp">
 
-</LinearLayout>
+</org.tzl.baselibrary.banner.Banner>

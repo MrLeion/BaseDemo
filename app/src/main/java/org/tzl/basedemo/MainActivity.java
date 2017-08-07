@@ -7,7 +7,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.tzl.basedemo.activity.DrawerLayoutActivity;
+import org.tzl.basedemo.activity.ListView4ListViewActivity;
+import org.tzl.basedemo.activity.ListViewWithItems;
+import org.tzl.basedemo.activity.MediaPlayActivity;
+import org.tzl.basedemo.activity.NotficationCompatActivity;
 import org.tzl.basedemo.activity.PopupWindowActivity;
+import org.tzl.basedemo.activity.ScrollView4ExListViewActivity;
+import org.tzl.basedemo.activity.ServiceTestActivity;
 import org.tzl.basedemo.activity.Sound2WordActivity;
 import org.tzl.basedemo.activity.UiAnimatorActivity;
 import org.tzl.basedemo.activity.WebviewActivity;
@@ -51,6 +57,30 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 break;
             case 4:
                 cls = UiAnimatorActivity.class;
+                break;
+
+            case 5:
+                cls = ListView4ListViewActivity.class;
+                break;
+
+            case 6:
+                cls = ScrollView4ExListViewActivity.class;
+                break;
+
+            case 7:
+                cls = ListViewWithItems.class;
+                break;
+
+            case 8:
+                cls = ServiceTestActivity.class;
+                break;
+
+            case 9:
+                cls = NotficationCompatActivity.class;
+                break;
+
+            case 10:
+                cls = MediaPlayActivity.class;
                 break;
         }
 

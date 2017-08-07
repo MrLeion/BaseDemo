@@ -29,7 +29,8 @@
 
     <string name="settings">设置</string>
     <string name="help">帮助</string>
-    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n最后点击两次后退按钮，即可返回。</string>
+    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n最后点击两次后退按钮，即可返回。
+    </string>
     <string name="quit">退出</string>
 
 
@@ -39,5 +40,20 @@
         <item>讯飞语音集成</item>
         <item>自定义WebView</item>
         <item>自动化测试</item>
+        <item>ScrollView嵌套ListView和ViewPager</item>
+        <item>ScrollView嵌套ExpandableListView</item>
+        <item>ListView多种布局</item>
+        <item>服务demo</item>
+        <item>通知系统</item>
+        <item>音视频播放器</item>
     </string-array>
+
+
+    <array name="url">
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic1xjab4j30ci08cjrv.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic259ohaj30ci08c74r.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic2b16zuj30ci08cwf4.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic2e7vsaj30ci08cglz.jpg</item>
+    </array>
 </resources>

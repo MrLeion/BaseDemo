@@ -13,12 +13,20 @@ import org.tzl.baselibrary.bean.DeviceInfo;
 import org.tzl.baselibrary.net.json.HttpManager;
 import org.tzl.baselibrary.utils.Utils;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * author: tangzenglei
  * created on: 2017/4/13 下午4:50
  * description:
  */
 public class BaseApplication extends Application {
+
+    private String[] imageUrls;
+    public static List<String>     urlList;
+
+
 
     @Override
     public void onCreate() {
@@ -34,6 +42,8 @@ public class BaseApplication extends Application {
         // 将“12345678”替换成您申请的APPID，申请地址：http://open.voicecloud.cn
         SpeechUtility.createUtility(this, SpeechConstant.APPID +"="+getString(R.string.app_id));
 
+        imageUrls = getResources().getStringArray(R.array.url);
+        urlList = Arrays.asList(imageUrls);
     }
 
 

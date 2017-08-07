@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+              android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:src="@mipmap/wc_logo"
+        android:layout_centerVertical="true"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_120"
+    />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_toRightOf="@id/iv"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_centerVertical="true"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="heehhhhhhhhhhhh"
+        android:ellipsize="end"
+    />
+
+
+    <ImageButton
+        android:id="@+id/ib_play_pause"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_80"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/notification_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
+
+    <ImageButton
+        android:id="@+id/ib_close"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:layout_marginRight="@dimen/dp_15"
+        android:src="@mipmap/notification_clean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
