@@ -7,10 +7,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.tzl.basedemo.activity.DrawerLayoutActivity;
+import org.tzl.basedemo.activity.LeanTextViewActivity;
 import org.tzl.basedemo.activity.ListView4ListViewActivity;
 import org.tzl.basedemo.activity.ListViewWithItems;
 import org.tzl.basedemo.activity.MediaPlayActivity;
 import org.tzl.basedemo.activity.NotficationCompatActivity;
+import org.tzl.basedemo.activity.PDFActivity;
 import org.tzl.basedemo.activity.PopupWindowActivity;
 import org.tzl.basedemo.activity.ScrollView4ExListViewActivity;
 import org.tzl.basedemo.activity.ServiceTestActivity;
@@ -40,7 +42,6 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
         Class<?> cls = null;
         switch (position) {
             case 0:
@@ -81,6 +82,13 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
             case 10:
                 cls = MediaPlayActivity.class;
+                break;
+            case 11:
+                cls = PDFActivity.class;
+                break;
+
+            case 12:
+                cls = LeanTextViewActivity.class;
                 break;
         }
 

@@ -40,7 +40,6 @@ public class PopupWindowActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initView() {
-
         tvFullScreen = (TextView) findViewById(R.id.tv_full_screen);
         tvDialog = (TextView) findViewById(R.id.tv_dialog);
         tvPop = (TextView) findViewById(R.id.tv_pop);

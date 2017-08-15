@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_150" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:src="@mipmap/lean_textview_bg"
+        android:scaleType="fitXY"
+    />
+
+
+    <org.tzl.basedemo.view.LeanTextView
+        android:id="@+id/ltv_lt"
+        android:layout_marginTop="@dimen/dp_30"
+        android:textSize="10sp"
+        android:text="左上方"
+        android:textColor="@color/white"
+        app:background_color="@color/colorPrimary"
+        app:orientation="left_top"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
+
+    <org.tzl.basedemo.view.LeanTextView
+        android:id="@+id/ltv_rt"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_alignParentRight="true"
+        android:textSize="10sp"
+        android:text="右上方"
+        android:textColor="@color/white"
+        app:background_color="@color/red"
+        app:orientation="right_top"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
+    <org.tzl.basedemo.view.LeanTextView
+        android:id="@+id/ltv_lb"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="10sp"
+        android:text="左下方"
+        android:textColor="@color/white"
+        app:background_color="@color/red"
+        app:orientation="left_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
+
+    <org.tzl.basedemo.view.LeanTextView
+        android:id="@+id/ltv_rb"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textSize="10sp"
+        android:text="右下方"
+        android:textColor="@color/white"
+        app:background_color="@color/red"
+        android:gravity="center"
+        app:orientation="right_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
+
+
+
+
+</RelativeLayout>

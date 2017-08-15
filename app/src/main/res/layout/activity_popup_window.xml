@@ -25,7 +25,7 @@
         android:padding="@dimen/dp_10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="弹出弹框"
+        android:text="底部弹框"
         android:background="@color/line_color"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/dp_50"

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LeanTextView">
+        <attr name="orientation">
+            <enum name="left_top" value="0"/>
+            <enum name="right_top" value="1"/>
+            <enum name="left_bottom" value="2"/>
+            <enum name="right_bottom" value="3"/>
+
+        </attr>
+            <attr name="background_color" format="color"/>
+
+    </declare-styleable>
+
+
+
+
+
+
+</resources>

@@ -75,6 +75,10 @@
 
         <activity android:name=".activity.MediaPlayActivity">
         </activity>
+        <activity android:name=".activity.PDFActivity">
+        </activity>
+        <activity android:name=".activity.LeanTextViewActivity">
+        </activity>
     </application>
 
 </manifest>

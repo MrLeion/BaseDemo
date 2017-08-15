@@ -46,6 +46,10 @@
         <item>服务demo</item>
         <item>通知系统</item>
         <item>音视频播放器</item>
+        <item>PDF阅读器</item>
+        <item>斜体TextView</item>
+
+
     </string-array>
 
 
