@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import org.tzl.baselibrary.R;
 import org.tzl.baselibrary.utils.T;
@@ -147,6 +148,13 @@ public class BaseActivity extends AppCompatActivity {
         getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
         return typedValue.data;
     }
+
+
+    public void showToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+
+    }
+
 
 
 

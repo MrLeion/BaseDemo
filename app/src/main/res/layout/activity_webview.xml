@@ -5,36 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn"
-        android:text="测试"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/loading"
-        android:text="加载"
-        android:onClick="loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 
-    <Button
-        android:id="@+id/login"
-        android:text="登录弹框"
-        android:onClick="login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
-
-    <org.tzl.baselibrary.widget.CustomeWebView
+    <org.tzl.baselibrary.webview.CustomWebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-
-
 
 
 

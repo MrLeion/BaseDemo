@@ -64,4 +64,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="dp_200">200dp</dimen>
     <dimen name="sp_7">7sp</dimen>
+    <dimen name="play_bar_height">57dp</dimen>
 </resources>

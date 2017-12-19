@@ -37,7 +37,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.jakewharton:butterknife:7.0.1'
     /**
-     * 网络请求框架
+     *  网络请求框架
      */
     compile 'com.lzy.net:okgo:2.0.0'
     //+:获取最新版本
@@ -46,4 +46,9 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     // guava for Android:
     compile 'com.google.guava:guava:22.0-android'
+    //PDF阅读器
+    compile 'com.github.barteksc:android-pdf-viewer:2.6.1'
+    //日历控件
+    compile 'com.prolificinteractive:material-calendarview:1.4.3'
+    compile files('libs/alipaySdk-20170725.jar')
 }

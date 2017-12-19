@@ -91,7 +91,7 @@ public class PopupWindowActivity extends AppCompatActivity implements View.OnCli
         int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         upView.measure(w, h);
         popupWindow = new CommonPopupWindow.Builder(this)
-                .setView(R.layout.popup_up)
+                .setView(upView)
                 .setWidthAndHeight(ViewGroup.LayoutParams.MATCH_PARENT, upView.getMeasuredHeight())
                 .setBackGroundLevel(0.5f)//取值范围0.0f-1.0f 值越小越暗
                 .setAnimationStyle(R.style.Anim2Top)

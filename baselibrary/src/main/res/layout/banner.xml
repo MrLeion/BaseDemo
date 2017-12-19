@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@id/bannerContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false">
 
 
-    <com.youth.banner.view.BannerViewPager
-        android:id="@id/bannerViewPager"
+    <org.tzl.baselibrary.banner.BannerViewPager
+        android:id="@+id/bannerViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false" />
@@ -18,7 +17,7 @@
         android:layout_alignParentBottom="true">
 
         <LinearLayout
-            android:id="@id/circleIndicator"
+            android:id="@+id/circleIndicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -28,19 +27,18 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@id/numIndicator"
+            android:id="@+id/numIndicator"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_margin="8dp"
-            android:background="@drawable/black_background"
             android:gravity="center"
             android:text="1/1"
             android:textColor="#ffffff"
             android:visibility="gone" />
 
         <LinearLayout
-            android:id="@id/titleView"
+            android:id="@+id/titleView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_below="@+id/circleIndicator"
@@ -49,7 +47,7 @@
             android:visibility="gone">
 
             <TextView
-                android:id="@id/bannerTitle"
+                android:id="@+id/bannerTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1000"
@@ -69,7 +67,7 @@
                 android:paddingRight="10dp">
 
                 <TextView
-                    android:id="@id/numIndicatorInside"
+                    android:id="@+id/numIndicatorInside"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -78,7 +76,7 @@
                     android:visibility="gone" />
 
                 <LinearLayout
-                    android:id="@id/indicatorInside"
+                    android:id="@+id/indicatorInside"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"

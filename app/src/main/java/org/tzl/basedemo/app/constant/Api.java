@@ -85,4 +85,37 @@ public class Api {
     }
 
 
+
+    /**
+     * 音乐模块
+     */
+    public  static  class Pay {
+        /**
+         * 音乐模块
+         */
+        public static final String BASE_PAY_URL = BASE_URL+"/fp-confined";
+
+
+        /**
+         * 获取用户支付方式
+         */
+        public static final String GETPAYMENTMODE = BASE_PAY_URL+"/consume/getPaymentMode";
+
+        /**
+         * 用户支付接口
+         */
+        public static final String PAYMENT = BASE_PAY_URL+"/consume/payment";
+        /**
+         * 用户支付状态
+         */
+        public static final String GETPAYMENTSTATUS = BASE_PAY_URL+"/consume/getPaymentStatus";
+
+
+
+
+    }
+
+
+
+
 }

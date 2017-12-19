@@ -1,12 +1,12 @@
-package org.tzl.baselibrary.widget;
+package org.tzl.baselibrary.webview;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.webkit.JavascriptInterface;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -15,6 +15,8 @@ import android.widget.Toast;
 import org.tzl.baselibrary.R;
 import org.tzl.baselibrary.inter.Loading;
 import org.tzl.baselibrary.utils.NetworkUtils;
+import org.tzl.baselibrary.utils.T;
+import org.tzl.baselibrary.widget.CustomProgressDialog;
 
 
 /**
@@ -22,19 +24,27 @@ import org.tzl.baselibrary.utils.NetworkUtils;
  * created on: 2017/4/17 上午10:50
  * description: 自定义webview
  */
-public class CustomeWebView extends WebView {
+public class CustomWebView extends WebView  {
 
     public static final String JSOBJECT = "android";
     private Activity mContext;
     private Loading  mCustomProgressDialog;
+    private CustomWebViewChromeClient mWebChromeClient;
 
-    public CustomeWebView(Context context) {
+    public static final int FILECHOOSER_RESULTCODE            = 0;
+    public static final int FILECHOOSER_RESULTCODE_FOR_ANDROID_5 = 1 ;
+
+    public CustomWebView(Context context) {
         this(context,null);
     }
 
-    public CustomeWebView(Context context, AttributeSet attrs) {
+    public CustomWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = (Activity) context;
+
+        /**
+         * 如果您需要不同的加载动画改变这个布局就可以了
+         */
         mCustomProgressDialog = new CustomProgressDialog.Builder(context)
                 .cancelTouchOut(false)
                 .style(R.style.customDialog)
@@ -60,13 +70,18 @@ public class CustomeWebView extends WebView {
          * 基础属性设置
          */
 
-//        支持JS
         WebSettings settings = getSettings();
+
+        //支持JS
         settings.setJavaScriptEnabled(true);
+
+        /**
+         * JS调用本地方法
+         */
+        addJavascriptInterface(new JsObject(), JSOBJECT);
 
         //提升渲染等级
         settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-
 
         /**
          * 缓存设置
@@ -76,7 +91,6 @@ public class CustomeWebView extends WebView {
         }else{
             settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         }
-
         settings.setDomStorageEnabled(true); // 开启 DOM storage API 功能
         settings.setDatabaseEnabled(true);   //开启 database storage API 功能
         settings.setAppCacheEnabled(true);//开启 Application Caches 功能
@@ -91,8 +105,6 @@ public class CustomeWebView extends WebView {
             settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
 
-
-
         /**
          * 点击连接在当前browser中响应
          */
@@ -104,34 +116,34 @@ public class CustomeWebView extends WebView {
             }
         });
 
-
         /**
          * 辅助功能：添加加载进度条
          */
-        setWebChromeClient(new WebChromeClient(){
+        mWebChromeClient = new CustomWebViewChromeClient(mContext, new WebViewCallback() {
             @Override
-            public void onProgressChanged(WebView view, int newProgress) {
-                if (newProgress==100) {
+            public void onProgressChanged(int newProgress) {
+                //custom your loading animation
+                if (newProgress == 100) {
                     mCustomProgressDialog.hideLoading();
-                }else{
+                } else {
                     mCustomProgressDialog.showLoading();
-
                 }
-
             }
-
 
             @Override
-            public void onReceivedTitle(WebView view, String title) {
-
+            public void onLoadTitle(String title) {
+              //todo: set title
+                T.showLongToast(title);
             }
+
         });
 
+        setWebChromeClient(mWebChromeClient);
 
-        /**
-         * JS调用本地方法
-         */
-        addJavascriptInterface(new JsObject(), JSOBJECT);
+
+
+
+
 
 
 
@@ -149,9 +161,14 @@ public class CustomeWebView extends WebView {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
-            case KeyEvent.KEYCODE_BACK:
-                this.goBack();
-                return true;
+            case KeyEvent.KEYCODE_BACK://设置退出网页后再退出当前Activity
+                if (this.canGoBack()) {
+                    this.goBack();
+                    return true;
+                }
+
+                mContext.finish();
+
         }
         return super.onKeyDown(keyCode, event);
     }
@@ -159,7 +176,6 @@ public class CustomeWebView extends WebView {
 
     /**
      * Js与java互相调用
-     *
      */
 
      class JsObject {
@@ -206,7 +222,6 @@ public class CustomeWebView extends WebView {
         @JavascriptInterface
         public void javaDataCallHtml(final String json) {
 
-
             post(new Runnable() {
                 @Override
                 public void run() {
@@ -224,8 +239,26 @@ public class CustomeWebView extends WebView {
      * ==========================================================================================
      */
     public void syncCookie() {
-        
+
+
     }
+
+
+    /**
+     * ==========================================================================================
+     * 拍照上传图片处理
+     * ==========================================================================================
+     */
+    public void mUploadMessage(Intent intent, int resultCode) {
+        mWebChromeClient.mUploadMessage(intent,resultCode);
+    }
+
+
+    public void mUploadMessageForAndroid5(Intent intent, int resultCode) {
+        mWebChromeClient.mUploadMessageForAndroid5(intent,resultCode);
+    }
+
+
 
 
 

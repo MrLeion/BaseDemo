@@ -8,9 +8,6 @@ import com.bumptech.glide.load.data.DataFetcher;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.model.stream.StreamModelLoader;
 
-import org.tzl.baselibrary.utils.NetworkUtils;
-import org.tzl.baselibrary.utils.SettingUtils;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -40,39 +37,54 @@ public class GlideImageLoaderStrategy implements ImageLoaderStrategy {
     public void loadStaticImage(Context context, ImageLoader imageLoader) {
 
 
-        //判断网络状态
-        if (NetworkUtils.isConnected()) {
-            //        case 1：连接上
+//        //判断网络状态
+//        if (NetworkUtils.isConnected()) {
+//            //        case 1：连接上
+//
+//            //判断是否设置wifi下加载图片
+//            if (!SettingUtils.getOnlyWifiLoadImg(context)) {
+//                loadNormal(context, imageLoader);
+//            }
+//
+//
+//            if (NetworkUtils.getWifiEnabled()) {
+//                //如果是wifi状态，正常加载
+//                loadNormal(context, imageLoader);
+//            }else{
+//                //如果是非wifi状态，并且加载模式为wifi的情况下,弹框提示用户是否要切换网络状态
+//
+//                ImageLoaderManager.LOAD_STRATEGY strategy = ImageLoaderManager.mStrategy;
+//                if (strategy == ImageLoaderManager.LOAD_STRATEGY.ONLY_WIFI ) {
+//                    //TODO:弹框提示用户是否要切换网络状态
+//                    SettingUtils.setOnlyWifiLoadImg(context,false);
+//
+//                }else{
+//                    //正常加载
+//                    loadNormal(context,imageLoader);
+//
+//                }
+//
+//            }
+//
+//
+//        }else{
+//            //case 2 :未连接上 读取缓存，并且提示用户网络未连接
+//            loadCache(context,imageLoader);
+//        }
 
-            //判断是否设置wifi下加载图片
-            if (!SettingUtils.getOnlyWifiLoadImg(context)) {
-                loadNormal(context, imageLoader);
-            }
 
 
-            if (NetworkUtils.getWifiEnabled()) {
-                //如果是wifi状态，正常加载
-                loadNormal(context, imageLoader);
-            }else{
-                //如果是非wifi状态，并且加载模式为wifi的情况下,弹框提示用户是否要切换网络状态
-
-                ImageLoaderManager.LOAD_STRATEGY strategy = ImageLoaderManager.mStrategy;
-                if (strategy == ImageLoaderManager.LOAD_STRATEGY.ONLY_WIFI ) {
-                    //TODO:弹框提示用户是否要切换网络状态
-                    SettingUtils.setOnlyWifiLoadImg(context,false);
-
-                }else{
-                    //正常加载
-                    loadNormal(context,imageLoader);
-
-                }
-
-            }
 
 
-        }else{
-            //case 2 :未连接上 读取缓存，并且提示用户网络未连接
-            loadCache(context,imageLoader);
+            //具体方法内容自己去选择，次方法是为了减少banner过多的依赖第三方包，所以将这个权限开放给使用者去选择
+        try {
+            Glide.with(context)
+                    .load(imageLoader.url)
+                    .crossFade()
+                    .into(imageLoader.imgView);
+
+        } catch (Exception e) {
+
         }
 
 

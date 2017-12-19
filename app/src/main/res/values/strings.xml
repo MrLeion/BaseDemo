@@ -38,7 +38,7 @@
         <item>侧边栏</item>
         <item>弹框</item>
         <item>讯飞语音集成</item>
-        <item>自定义WebView</item>
+        <item>～～～～</item>
         <item>自动化测试</item>
         <item>ScrollView嵌套ListView和ViewPager</item>
         <item>ScrollView嵌套ExpandableListView</item>
@@ -48,8 +48,9 @@
         <item>音视频播放器</item>
         <item>PDF阅读器</item>
         <item>斜体TextView</item>
-
-
+        <item>材料日历</item>
+        <item>webview问题研究</item>
+        <item>第三方支付</item>
     </string-array>
 
 
@@ -60,4 +61,6 @@
         <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic2b16zuj30ci08cwf4.jpg</item>
         <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic2e7vsaj30ci08cglz.jpg</item>
     </array>
+    <string name="title_activity_pony_music">PonyMusicActivity</string>
+
 </resources>

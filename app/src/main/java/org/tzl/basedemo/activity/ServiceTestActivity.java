@@ -13,6 +13,8 @@ import org.tzl.basedemo.service.MyService;
 import org.tzl.baselibrary.base.BaseActivity;
 
 public class ServiceTestActivity extends BaseActivity implements View.OnClickListener {
+
+
     private Button startService;
 
     private Button stopService;

@@ -10,6 +10,8 @@ import org.tzl.basedemo.activity.DrawerLayoutActivity;
 import org.tzl.basedemo.activity.LeanTextViewActivity;
 import org.tzl.basedemo.activity.ListView4ListViewActivity;
 import org.tzl.basedemo.activity.ListViewWithItems;
+import org.tzl.basedemo.activity.LiveNetActivity;
+import org.tzl.basedemo.activity.MaterialViewActivity;
 import org.tzl.basedemo.activity.MediaPlayActivity;
 import org.tzl.basedemo.activity.NotficationCompatActivity;
 import org.tzl.basedemo.activity.PDFActivity;
@@ -17,8 +19,9 @@ import org.tzl.basedemo.activity.PopupWindowActivity;
 import org.tzl.basedemo.activity.ScrollView4ExListViewActivity;
 import org.tzl.basedemo.activity.ServiceTestActivity;
 import org.tzl.basedemo.activity.Sound2WordActivity;
+import org.tzl.basedemo.activity.ThirdPartyPayActivity;
 import org.tzl.basedemo.activity.UiAnimatorActivity;
-import org.tzl.basedemo.activity.WebviewActivity;
+import org.tzl.basedemo.activity.WebViewTestActivity;
 import org.tzl.baselibrary.base.BaseActivity;
 import org.tzl.baselibrary.utils.UIManager;
 
@@ -54,7 +57,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
                 cls = Sound2WordActivity.class;
                 break;
             case 3:
-                cls = WebviewActivity.class;
+//                cls = WebviewActivity.class;
                 break;
             case 4:
                 cls = UiAnimatorActivity.class;
@@ -90,8 +93,23 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
             case 12:
                 cls = LeanTextViewActivity.class;
                 break;
-        }
 
+            case 13:
+                cls = MaterialViewActivity.class;
+                break;
+
+            case 14:
+                cls = WebViewTestActivity.class;
+                break;
+
+            case 15:
+                cls = ThirdPartyPayActivity.class;
+                break;
+
+            case 16:
+                cls = LiveNetActivity.class;
+                break;
+        }
         UIManager.turnToAct(this, cls);
     }
 }

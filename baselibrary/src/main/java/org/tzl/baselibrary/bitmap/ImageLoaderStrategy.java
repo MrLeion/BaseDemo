@@ -22,4 +22,7 @@ public interface ImageLoaderStrategy {
      * @param imageLoader
      */
     void loadDynamicImage(Context context,ImageLoader imageLoader);
+
+
+
 }

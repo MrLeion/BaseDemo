@@ -25,7 +25,6 @@ public class ImageLoader {
         this.placeHolder = builder.placeHolder;
         this.imgView = builder.imgView;
         this.strategy = builder.strategy;
-
     }
 
 
@@ -56,7 +55,7 @@ public class ImageLoader {
 
 
         public Builder imgView(ImageView imageView) {
-            this.imgView = imgView;
+            this.imgView = imageView;
             return this;
         }
 

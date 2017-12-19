@@ -122,7 +122,6 @@ public class CustomProgressDialog extends Dialog implements Loading{
 
         public Builder aniRes(int animRes) {
             this.animRes = animRes;
-
             return this;
         }
 

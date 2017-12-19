@@ -2,6 +2,7 @@ package org.tzl.baselibrary.banner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -20,12 +21,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.youth.banner.listener.OnBannerClickListener;
-import com.youth.banner.listener.OnBannerListener;
-import com.youth.banner.loader.ImageLoaderInterface;
-import com.youth.banner.view.BannerViewPager;
 
 import org.tzl.baselibrary.R;
+import org.tzl.baselibrary.bitmap.ImageLoader;
+import org.tzl.baselibrary.bitmap.ImageLoaderStrategy;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -65,15 +64,14 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
     private BannerViewPager viewPager;
     private TextView        bannerTitle, numIndicatorInside, numIndicator;
     private LinearLayout indicator, indicatorInside, titleView;
-    private ImageLoaderInterface  imageLoader;
-    private BannerPagerAdapter    adapter;
-    private OnPageChangeListener  mOnPageChangeListener;
-    private BannerScroller        mScroller;
-    private OnBannerClickListener bannerListener;
-    private OnBannerListener      listener;
-    private DisplayMetrics        dm;
+    private ImageLoaderStrategy  imageLoader;
+    private BannerPagerAdapter   adapter;
+    private OnPageChangeListener mOnPageChangeListener;
+    private BannerScroller       mScroller;
+    private OnBannerListener     listener;
+    private DisplayMetrics       dm;
 
-    private WeakHandler handler = new WeakHandler();
+    private Handler handler = new Handler();
 
     public Banner(Context context) {
         this(context, null);
@@ -149,7 +147,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         return this;
     }
 
-    public Banner setImageLoader(ImageLoaderInterface imageLoader) {
+    public Banner setImageLoader(ImageLoaderStrategy imageLoader) {
         this.imageLoader = imageLoader;
         return this;
     }
@@ -330,22 +328,19 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         }
     }
 
-    private void setImageList(List<?> imagesUrl) {
+    private void setImageList(List<String> imagesUrl) {
         if (imagesUrl == null || imagesUrl.size() <= 0) {
             Log.e(tag, "Please set the images data.");
             return;
         }
         initImages();
         for (int i = 0; i <= count + 1; i++) {
-            View imageView = null;
-            if (imageLoader != null) {
-                imageView = imageLoader.createImageView(context);
-            }
+            ImageView imageView = null;
             if (imageView == null) {
                 imageView = new ImageView(context);
             }
             setScaleType(imageView);
-            Object url = null;
+            String url = null;
             if (i == 0) {
                 url = imagesUrl.get(count - 1);
             } else if (i == count + 1) {
@@ -354,8 +349,10 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
                 url = imagesUrl.get(i - 1);
             }
             imageViews.add(imageView);
-            if (imageLoader != null)
-                imageLoader.displayImage(context, url, imageView);
+            if (imageLoader != null) {
+                ImageLoader loader = new ImageLoader.Builder().url(url).imgView(imageView).build();
+                imageLoader.loadStaticImage(context, loader);
+            }
             else
                 Log.e(tag, "Please set images loader.");
         }
@@ -483,7 +480,6 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
 
     /**
      * 返回真实的位置
-     *
      * @param position
      * @return 下标从0开始
      */
@@ -510,16 +506,6 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         public Object instantiateItem(ViewGroup container, final int position) {
             container.addView(imageViews.get(position));
             View view = imageViews.get(position);
-            if (bannerListener != null) {
-                view.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.e(tag, "你正在使用旧版点击事件接口，下标是从1开始，" +
-                                "为了体验请更换为setOnBannerListener，下标从0开始计算");
-                        bannerListener.OnBannerClick(position);
-                    }
-                });
-            }
             if (listener != null) {
                 view.setOnClickListener(new OnClickListener() {
                     @Override
@@ -605,22 +591,6 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
 
     }
 
-    @Deprecated
-    public Banner setOnBannerClickListener(OnBannerClickListener listener) {
-        this.bannerListener = listener;
-        return this;
-    }
-
-    /**
-     * 废弃了旧版接口，新版的接口下标是从1开始，同时解决下标越界问题
-     *
-     * @param listener
-     * @return
-     */
-    public Banner setOnBannerListener(OnBannerListener listener) {
-        this.listener = listener;
-        return this;
-    }
 
     public void setOnPageChangeListener(OnPageChangeListener onPageChangeListener) {
         mOnPageChangeListener = onPageChangeListener;
@@ -629,4 +599,18 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
     public void releaseBanner() {
         handler.removeCallbacksAndMessages(null);
     }
+
+
+
+    public interface OnBannerListener {
+        public void OnBannerClick(int position);
+    }
+
+
+    public  void setOnBannerListener(OnBannerListener onBannerListener) {
+
+        this.listener = onBannerListener;
+
+    }
+
 }
