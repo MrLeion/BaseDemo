@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/BaseDemo.iml" filepath="$PROJECT_DIR$/BaseDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databindingdemo/databindingdemo.iml" filepath="$PROJECT_DIR$/databindingdemo/databindingdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jnidemo/jnidemo.iml" filepath="$PROJECT_DIR$/jnidemo/jnidemo.iml" />
     </modules>
   </component>
 </project>

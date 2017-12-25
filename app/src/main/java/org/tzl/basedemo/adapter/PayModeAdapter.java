@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.common.base.Strings;
 
-import org.tzl.basedemo.R;
 import org.tzl.basedemo.bean.PayBean;
 
 import java.util.List;

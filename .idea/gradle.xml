@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baselibrary" />
+            <option value="$PROJECT_DIR$/databindingdemo" />
+            <option value="$PROJECT_DIR$/jnidemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
